@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Finances Chart</title>
+  </head>
+  <body>
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title">Expenses</h2>
+        <div class="flex-wrapper justify-between align-center">
+          <div class="time-options flex-wrapper">
+            <div id="weekly" class="active">
+              <p>Weekly</p>
+            </div>
+            <div id="monthly">
+              <p>Monthly</p>
+            </div>
+            <div id="yearly">
+              <p>Yearly</p>
+            </div>
+          </div>
+          <button class="options-btn flex-wrapper justify-center align-center">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+      <div class="card-body">
+        <!-- Chart -->
+        <div class="chart-wrapper">
+          <!-- Number metrics -->
+          <div id="chart_numbers" class="grid-wrapper grid-row">
+            <div class="flex-wrapper align-center" id="4k">
+              <p>4K</p>
+              <span class="x-line"></span>
+            </div>
+            <div class="flex-wrapper align-center" id="3k">
+              <p>3k</p>
+              <span class="x-line"></span>
+            </div>
+            <div class="flex-wrapper align-center" id="2k">
+              <p>2k</p>
+              <span class="x-line"></span>
+            </div>
+            <div class="flex-wrapper align-center" id="1k">
+              <p>1k</p>
+              <span class="x-line"></span>
+            </div>
+            <div class="flex-wrapper align-center" id="0k">
+              <p>0&nbsp;</p>
+              <span class="x-line"></span>
+            </div>
+          </div>
+          <!-- Days -->
+          <div id="chart_days" class="grid-wrapper grid-col">
+            <div id="mon" data-finances="[1400, 1550]">
+              <div class="flex-wrapper justify-center">
+                <span class="inc-line"></span>
+                <span class="exp-line"></span>
+              </div>
+              <p>Mon</p>
+            </div>
+            <div id="tue" data-finances="[2250, 1500]">
+              <div class="flex-wrapper justify-center">
+                <span class="inc-line"></span>
+                <span class="exp-line"></span>
+              </div>
+              <p>Tue</p>
+            </div>
+            <div id="wed" data-finances="[2500, 1230]">
+              <div class="flex-wrapper justify-center">
+                <span class="inc-line"></span>
+                <span class="exp-line"></span>
+              </div>
+              <p>Wed</p>
+            </div>
+            <div id="thu" data-finances="[2950, 950]">
+              <div class="flex-wrapper justify-center">
+                <span class="inc-line"></span>
+                <span class="exp-line"></span>
+              </div>
+              <p>Thu</p>
+            </div>
+            <div id="fri" data-finances="[2550, 1380]">
+              <div class="flex-wrapper justify-center">
+                <span class="inc-line"></span>
+                <span class="exp-line"></span>
+              </div>
+              <p>Fri</p>
+            </div>
+            <div id="sat" data-finances="[2200, 1845]">
+              <div class="flex-wrapper justify-center">
+                <span class="inc-line"></span>
+                <span class="exp-line"></span>
+              </div>
+              <p>Sat</p>
+            </div>
+            <div id="sun" data-finances="[2430, 2050]">
+              <div class="flex-wrapper justify-center">
+                <span class="inc-line"></span>
+                <span class="exp-line"></span>
+              </div>
+              <p>Sun</p>
+            </div>
+          </div>
+        </div>
+        <div id="inc_exp" class="flex-wrapper justify-center">
+          <div class="flex-wrapper align-center">
+            <span class="dot"></span>
+            <p>Income</p>
+          </div>
+          <div class="flex-wrapper align-center">
+            <span class="dot"></span>
+            <p>Expenses</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../src/script.js"></script>
+  </body>
+</html>

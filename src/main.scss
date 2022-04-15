@@ -1,0 +1,187 @@
+$bg-gradient: linear-gradient(130deg, #89c4fa 24%, #747aef 70%);
+$bg-income: #8c5aeb;
+$bg-expense: #ec4675;
+$time-option-bg-active-hover: linear-gradient(165deg, #89c4fa 24%, #7985f4 70%);
+$chart-txt: lighten(#000, 45%);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: $bg-gradient;
+  height: 100vh;
+  font-family: Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+// Utility classes
+.card {
+  width: max(576px, 35vw);
+  border-radius: 15px;
+  background: #fff;
+  padding: 50px;
+  box-shadow: -15px -15px 0 rgba(255 255 255 / 0.2);
+}
+.flex-wrapper {
+  display: flex;
+  &.justify-between {
+    justify-content: space-between;
+  }
+  &.justify-center {
+    justify-content: center;
+  }
+  &.align-center {
+    align-items: center;
+  }
+}
+.grid-wrapper {
+  display: grid;
+  &.grid-row {
+    grid-template-rows: repeat(5, 1fr);
+  }
+  &.grid-col {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+// Card header
+.card-header {
+  .card-title {
+    font-family: "Merriweather", sans-serif;
+    margin-bottom: 24px;
+  }
+  .time-options {
+    border-radius: 50px;
+    background: rgba(235, 237, 253, 0.795);
+    padding: 5px;
+    > div {
+      cursor: pointer;
+      border-radius: 50px;
+      padding: 10px 16px;
+      font-family: Helvetica;
+      font-weight: lighter;
+      color: lighten(#000, 5%);
+      transition: background 0.15s ease;
+      &.active {
+        background-image: $bg-gradient;
+        color: #fff;
+        &:hover {
+          background-image: $time-option-bg-active-hover;
+        }
+      }
+      &:hover {
+        color: lighten(#000, 25%);
+        background: rgba(222, 228, 244, 0.95);
+      }
+    }
+  }
+  .options-btn {
+    border: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: none;
+    gap: 4px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    > span {
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      background: #000;
+      border-radius: 50%;
+    }
+    &:hover {
+      background: rgba(0 0 0 / 0.15);
+    }
+  }
+}
+// Card body
+.card-body {
+  padding-top: min(40px, 15%);
+  .chart-wrapper {
+    position: relative;
+    width: 100%;
+    #chart_numbers {
+      gap: 30px;
+      > div {
+        gap: 15px;
+        p {
+          color: $chart-txt;
+          font-weight: 500;
+          font-size: 12px;
+        }
+        span.x-line {
+          width: 95%;
+          height: 2px;
+          background: rgba(225, 227, 243, 0.6);
+        }
+      }
+    }
+    #chart_days {
+      position: absolute;
+      bottom: -10%;
+      right: 1%;
+      width: 100%;
+      justify-items: last baseline;
+      > div {
+        align-self: end;
+        > p {
+          color: $chart-txt;
+          font-size: 12px;
+          font-weight: 500;
+          margin-top: 12px;
+        }
+        > div {
+          gap: 2px;
+          span.inc-line {
+            align-self: end;
+            width: 8px;
+            height: 175px;
+            border-radius: 10px;
+            background: #8578ea;
+            display: inline-block;
+          }
+          span.exp-line {
+            align-self: end;
+            width: 3px;
+            height: 175px;
+            background: #eb5685;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+  }
+  #inc_exp {
+    margin-top: 40px;
+    gap: 10px;
+    > div {
+      gap: 5px;
+      .dot {
+        display: inline-block;
+        border-radius: 50%;
+        width: 9px;
+        height: 9px;
+      }
+      p {
+        font-size: 13px;
+        font-weight: lighter;
+        color: lighten(#000, 35%);
+      }
+      &:first-child {
+        .dot {
+          background: $bg-income;
+        }
+      }
+      &:last-child {
+        .dot {
+          background: $bg-expense;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,181 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(130deg, #89c4fa 24%, #747aef 70%);
+  height: 100vh;
+  font-family: Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.card {
+  width: max(576px, 35vw);
+  border-radius: 15px;
+  background: #fff;
+  padding: 50px;
+  box-shadow: -15px -15px 0 rgba(255, 255, 255, 0.2);
+}
+
+.flex-wrapper {
+  display: flex;
+}
+.flex-wrapper.justify-between {
+  justify-content: space-between;
+}
+.flex-wrapper.justify-center {
+  justify-content: center;
+}
+.flex-wrapper.align-center {
+  align-items: center;
+}
+
+.grid-wrapper {
+  display: grid;
+}
+.grid-wrapper.grid-row {
+  grid-template-rows: repeat(5, 1fr);
+}
+.grid-wrapper.grid-col {
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.card-header .card-title {
+  font-family: "Merriweather", sans-serif;
+  margin-bottom: 24px;
+}
+.card-header .time-options {
+  border-radius: 50px;
+  background: rgba(235, 237, 253, 0.795);
+  padding: 5px;
+}
+.card-header .time-options > div {
+  cursor: pointer;
+  border-radius: 50px;
+  padding: 10px 16px;
+  font-family: Helvetica;
+  font-weight: lighter;
+  color: #0d0d0d;
+  transition: background 0.15s ease;
+}
+.card-header .time-options > div.active {
+  background-image: linear-gradient(130deg, #89c4fa 24%, #747aef 70%);
+  color: #fff;
+}
+.card-header .time-options > div.active:hover {
+  background-image: linear-gradient(165deg, #89c4fa 24%, #7985f4 70%);
+}
+.card-header .time-options > div:hover {
+  color: #404040;
+  background: rgba(222, 228, 244, 0.95);
+}
+.card-header .options-btn {
+  border: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: none;
+  gap: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.card-header .options-btn > span {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  background: #000;
+  border-radius: 50%;
+}
+.card-header .options-btn:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.card-body {
+  padding-top: min(40px, 15%);
+}
+.card-body .chart-wrapper {
+  position: relative;
+  width: 100%;
+}
+.card-body .chart-wrapper #chart_numbers {
+  gap: 30px;
+}
+.card-body .chart-wrapper #chart_numbers > div {
+  gap: 15px;
+}
+.card-body .chart-wrapper #chart_numbers > div p {
+  color: #737373;
+  font-weight: 500;
+  font-size: 12px;
+}
+.card-body .chart-wrapper #chart_numbers > div span.x-line {
+  width: 95%;
+  height: 2px;
+  background: rgba(225, 227, 243, 0.6);
+}
+.card-body .chart-wrapper #chart_days {
+  position: absolute;
+  bottom: -10%;
+  right: 1%;
+  width: 100%;
+  justify-items: last baseline;
+}
+.card-body .chart-wrapper #chart_days > div {
+  align-self: end;
+}
+.card-body .chart-wrapper #chart_days > div > p {
+  color: #737373;
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 12px;
+}
+.card-body .chart-wrapper #chart_days > div > div {
+  gap: 2px;
+}
+.card-body .chart-wrapper #chart_days > div > div span.inc-line {
+  align-self: end;
+  width: 8px;
+  height: 175px;
+  border-radius: 10px;
+  background: #8578ea;
+  display: inline-block;
+}
+.card-body .chart-wrapper #chart_days > div > div span.exp-line {
+  align-self: end;
+  width: 3px;
+  height: 175px;
+  background: #eb5685;
+  border-radius: 5px;
+}
+.card-body #inc_exp {
+  margin-top: 40px;
+  gap: 10px;
+}
+.card-body #inc_exp > div {
+  gap: 5px;
+}
+.card-body #inc_exp > div .dot {
+  display: inline-block;
+  border-radius: 50%;
+  width: 9px;
+  height: 9px;
+}
+.card-body #inc_exp > div p {
+  font-size: 13px;
+  font-weight: lighter;
+  color: #595959;
+}
+.card-body #inc_exp > div:first-child .dot {
+  background: #8c5aeb;
+}
+.card-body #inc_exp > div:last-child .dot {
+  background: #ec4675;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,19 @@
+{
+  "name": "income_expenses_chart",
+  "version": "1.0.0",
+  "description": "Component design",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch src/main.scss:style.css"
+  },
+  "keywords": [
+    "design",
+    "chart"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "sass": "^1.45.2"
+  }
+}
